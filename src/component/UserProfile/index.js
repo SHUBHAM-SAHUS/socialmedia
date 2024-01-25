@@ -42,5 +42,3 @@ const UserProfile = () => {
 
 export default UserProfile
 
-
-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
