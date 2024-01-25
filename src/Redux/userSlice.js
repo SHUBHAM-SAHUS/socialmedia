@@ -11,8 +11,8 @@ export const getUserProfile = createAsyncThunk('user/getprofile', async (token, 
       },
     });
 
-    // Assuming the API response has a 'data' property containing the user profile
-    return response.data.data; // Adjust this based on your API response structure
+    
+    return response.data.data; 
   } catch (error) {
     console.error('Error fetching user profile:', error.message);
     throw error;
@@ -20,16 +20,16 @@ export const getUserProfile = createAsyncThunk('user/getprofile', async (token, 
 });
 
 
-export const gUserProfile = createAsyncThunk('user/getprofile', async (token, { dispatch }) => {
+export const EditgUserProfile = createAsyncThunk('user/editProfile', async (token, { dispatch }) => {
   try {
-    const response = await axios.get(`${baseURLURl}/user/getProfile`, {
+    const response = await axios.get(`${baseURLURl}/user/editProfile`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     });
 
-    // Assuming the API response has a 'data' property containing the user profile
-    return response.data.data; // Adjust this based on your API response structure
+ 
+    return response.data.data; 
   } catch (error) {
     console.error('Error fetching user profile:', error.message);
     throw error;
