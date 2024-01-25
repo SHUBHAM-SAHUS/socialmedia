@@ -22,12 +22,10 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     console.log(userData);
-    debugger;
     dispatch(login(userData))
         .then((response) => {
            const {success,data,message} = response.payload 
             // console.log('response', response);
-            //   debugger
             if (success) toast.success('Login successfully');
             localStorage.setItem('token', data.token)
             localStorage.setItem('userId', data.userId);

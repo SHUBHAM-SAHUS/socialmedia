@@ -1,6 +1,15 @@
+import { Button } from 'bootstrap';
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+ const navigate = useNavigate()
+    const logOutHandler = () =>{
+        localStorage.removeItem("token")
+         localStorage.removeItem('userId');
+         navigate("/")
+}
+
   return (
     <>
       <nav className='navbar navbar-expand-lg bg-body-tertiary'>
@@ -62,7 +71,16 @@ const Navbar = () => {
                       Something else here
                     </a>
                   </li>
+
+                  <li>
+                    <Link className='dropdown-item'>LogOut</Link>
+                  </li>
                 </ul>
+              </li>
+              <li className='nav-item'>
+                <button className='nav-link' onClick={logOutHandler}>
+                  LogOut
+                </button>
               </li>
             </ul>
           </div>

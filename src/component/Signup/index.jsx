@@ -24,7 +24,6 @@ const SignUP = () => {
     const handleSignup = (e) => {
           e.preventDefault();
         console.log(userData);
-      debugger
     //     dispatch(signup(userData)).then(() => {
     //      toast.success('signup successfully')
     //     }).catch((err) => {
@@ -35,7 +34,6 @@ const SignUP = () => {
       .then((response) => {
         const { success, data, message } = response.payload;
         // console.log('response', response);
-        //   debugger
         if (success) toast.success('SignUP successfully');
         
   
